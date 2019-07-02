@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<title>Cadastrar</title>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"rel="stylesheet"></link>
+<script	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="panel-heading">
+			<strong>Cadastro de usuário</strong>
+		</div>
+		<div class="panel-body">
+			<form action="form-horizontal" th:object="${user}" th:action="@{/login/action/signup}" method="POST" style="margin: 10px">
+				<div class="form-group">
+					<fieldset>
+						<div class="form-group row">
+							<label>Nome</label>
+							 <input type="text" class="form-control input-sm" th:field="*{name}"	autofocus="autofocus" placeholder="Informe o nome"
+								maxlength="50" />
+						</div>
+						<div class="form-group row">
+							<label>E-mail</label>
+							 <input type="email" class="form-control input-sm" th:field="*{email}" placeholder="Informe o e-mail"
+								maxlength="50" />
+						</div>
+						<div class="form-group row">
+							<label>Senha</label>
+							 <input type="password" class="form-control input-sm" th:field="*{password}" placeholder="Informe a senha"
+								maxlength="50" />
+						</div>
+					</fieldset>
+				</div>
+				<div align="center">
+					<button type="submit" class="btn btn-sm btn-primary">Salvar</button>
+					<!-- 
+						<a th:href="@{/listarCurso}" class="btn btn-sm btn-default">Cancelar</a>
+					 -->
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

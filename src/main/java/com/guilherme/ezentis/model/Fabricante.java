@@ -1,13 +1,12 @@
 package com.guilherme.ezentis.model;
 
 import java.io.Serializable;
-import java.util.List;
+
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 
 @Entity
 public class Fabricante implements Serializable {
@@ -20,9 +19,6 @@ public class Fabricante implements Serializable {
 	
 	private String nome;
 	
-	@OneToMany(mappedBy="fabricante")
-	private List<Carro> carro;
-
 	public Integer getIid() {
 		return id;
 	}
@@ -38,12 +34,4 @@ public class Fabricante implements Serializable {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-
-	public List<Carro> getCarro() {
-		return carro;
-	}
-
-	public void setCarro(List<Carro> carro) {
-		this.carro = carro;
-	}	
 }

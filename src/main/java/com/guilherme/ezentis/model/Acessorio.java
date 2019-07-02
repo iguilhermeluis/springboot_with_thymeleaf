@@ -1,14 +1,11 @@
 package com.guilherme.ezentis.model;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 
 @Entity
 public class Acessorio implements Serializable{
@@ -21,9 +18,6 @@ public class Acessorio implements Serializable{
 	
 	private String descricao;
 	
-	@ManyToMany(mappedBy="acessorios")
-	private List<Carro> carros = new ArrayList<>();
-
 	public Integer getId() {
 		return id;
 	}
@@ -40,11 +34,4 @@ public class Acessorio implements Serializable{
 		this.descricao = descricao;
 	}
 
-	public List<Carro> getCarros() {
-		return carros;
-	}
-
-	public void setCarros(List<Carro> carros) {
-		this.carros = carros;
-	}
 }

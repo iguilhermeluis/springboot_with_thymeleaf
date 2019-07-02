@@ -7,10 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.guilherme.ezentis.model.Chave;
-import com.guilherme.ezentis.model.Profile;
 import com.guilherme.ezentis.model.User;
 import com.guilherme.ezentis.repository.ChaveRepository;
-import com.guilherme.ezentis.repository.ProfileRepository;
 
 import javassist.tools.rmi.ObjectNotFoundException;
 
@@ -23,30 +21,29 @@ public class ChaveService {
 		return chaveRepo.findAll();
 		
 	}
-	/*
-	public Profile searchProfile (Integer id) throws ObjectNotFoundException {
-		Optional<Profile> objProfileDB = proRepo.findById(id);
-		return objProfileDB.orElseThrow(() -> new ObjectNotFoundException(
-				"Profile não encontrada ! Id: " + id +", Tipo " + User.class.getName()));
+	
+	public Chave searchChave (Integer id) throws ObjectNotFoundException {
+		Optional<Chave> objChaveDB = chaveRepo.findById(id);
+		return objChaveDB.orElseThrow(() -> new ObjectNotFoundException(
+				"Chave não encontrada ! Id: " + id +", Tipo " + User.class.getName()));
 	}
 	
-
-	public void delete (Integer idProfile) {
+	public void delete (Integer idChave) {
+		chaveRepo.deleteById(idChave);
+	}
+	
+	public Chave update(Chave objChave) throws ObjectNotFoundException {
+		Chave objChaveDB = searchChave(objChave.getId());
+		objChaveDB.setCarro(objChave.getCarro());
+		objChaveDB.setCodigo(objChave.getCodigo());
+		return chaveRepo.save(objChaveDB);
+	
+	}
+	
+	public Chave save (Chave objChave) {
 		//estou colocando um objeto novo então o id precisa ser null
-		proRepo.deleteById(idProfile);
+		objChave.setId(null);
+		return chaveRepo.save(objChave);
 	}
-	
-	public Profile update(Profile objProfile) throws ObjectNotFoundException {
-		Profile objProfileDB = searchProfile(objProfile.getId());
-		objProfileDB.setName(objProfile.getName());
-		return proRepo.save(objProfileDB);
-	
-	}
-	
-	public Profile save (Profile objProfile) {
-		//estou colocando um objeto novo então o id precisa ser null
-		objProfile.setId(null);
-		return proRepo.save(objProfile);
-	} */
 	
 }
