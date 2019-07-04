@@ -33,10 +33,7 @@ public class UserController {
 		mv.addObject("users", userService.listUsers());
 		return mv;
 	}
-	@GetMapping("/")
-	public ModelAndView viewInit() {
-		return loginView();
-	}
+	
 	
 	@GetMapping("/dashboard/users/delete/{id}")
 	public ModelAndView delete(@PathVariable("id") Integer id) {

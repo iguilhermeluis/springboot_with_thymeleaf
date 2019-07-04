@@ -37,7 +37,7 @@ public class AcessorioService {
 		repoAcessorio.deleteById(id);
 	}
 	
-	public List<Acessorio> listaUsuario(){
+	public List<Acessorio> listar(){
 		return repoAcessorio.findAll();
 	}
 

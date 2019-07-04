@@ -28,7 +28,7 @@ public class Carro implements Serializable{
 	
 	private Integer preco;
 	
-	private Integer ano;
+	private String ano;
 	
 	@OneToOne
 	@JoinColumn(name="chave_id")
@@ -70,11 +70,11 @@ public class Carro implements Serializable{
 		this.preco = preco;
 	}
 
-	public Integer getAno() {
+	public String getAno() {
 		return ano;
 	}
 
-	public void setAno(Integer ano) {
+	public void setAno(String ano) {
 		this.ano = ano;
 	}
 

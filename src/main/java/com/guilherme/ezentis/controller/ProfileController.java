@@ -1,6 +1,5 @@
 package com.guilherme.ezentis.controller;
 
-import java.util.Arrays;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,7 +9,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.guilherme.ezentis.model.Profile;
-import com.guilherme.ezentis.model.User;
 import com.guilherme.ezentis.service.ProfileService;
 
 import javassist.tools.rmi.ObjectNotFoundException;
@@ -20,9 +18,7 @@ public class ProfileController {
 	
 	@Autowired
 	private ProfileService profileService;
-	// salvando o edit via post
 	
-	// cadastro
 	@PostMapping("/dashboard/profiles/action/save")
 	public ModelAndView save(Profile profile) throws ObjectNotFoundException {
 		profileService.save(profile);

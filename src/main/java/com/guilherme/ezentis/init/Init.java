@@ -97,7 +97,7 @@ public class Init implements ApplicationListener<ContextRefreshedEvent> {
 		
 		Carro car1 = new Carro();
 		car1.setAcessorios(Arrays.asList(ace2, ace1));
-		car1.setAno(2014);
+		car1.setAno("2014");
 		car1.setDocumento(doc1);
 		car1.setChave(cha1);
 		car1.setFabricante(fb1);
