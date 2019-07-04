@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http:www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"/>
+<meta http-equiv="Content-Type" content="text/html; charset-8"/>
+<meta name="viewport" content="width=device-width" />
+<title>Cadastro de Carros</title>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"></link>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="row" style='margin-top:50px'>	
+			<div class="col-md-2">
+			 	<a class="btn btn-primary" th:href="@{/carro/listar}">LISTAR CARROS</a>
+			</div>
+			<div class="col-md-2">
+			 	<a class="btn btn-primary" th:href="@{/documento/listar}">LISTAR DOCUMENTOS</a>
+			</div>
+			<div class="col-md-2">
+			 	<a class="btn btn-primary" th:href="@{/chave/listar}">LISTAR CHAVES</a>
+			</div>
+			<div class="col-md-3">
+			 	<a class="btn btn-primary" th:href="@{/fabricante/listar}">LISTAR FABRICANTES</a>
+			</div>
+			<div class="col-md-3">
+			 	<a class="btn btn-primary" th:href="@{/acessorio/listar}">LISTAR ACESSORIOS</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

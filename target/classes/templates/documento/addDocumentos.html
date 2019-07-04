@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http:www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"/>
+<meta http-equiv="Content-Type" content="text/html; charset-8"/>
+<meta name="viewport" content="width=device-width" />
+<title>Cadastro de Documentos</title>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"></link>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="panel-heading" align="center">
+			<strong>Cadastro de Documentos</strong>
+		</div>
+	<div class="panel-body">
+	<form class="form-horizontal" th:object="${documento}" th:action="@{/documento/salvar}" method="post" style="margin: 10px">
+		<div class="form-group">
+		<fieldset>
+			<div class="form-group row">
+				<label> Número </label>
+				<input type="text" class="form-control input-sm" th:field="*{numero}" autofocus="autofocus" placeholder="Informe o numero"/>			
+			</div>
+		</fieldset>	
+	</div>
+	<div align="center">
+		<button type="submit" class="btn btn-sm brn-primary">Salvar</button>
+		  <a th:href="@{/documento/listar}">Cancelar</a>
+	</div>
+</form>
+</div>
+</div>
+
+</body>
+</html>
